@@ -12,7 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'name' => 'Bob',
+        'tasks' => [
+            'Go to store',
+            'Go to school',
+            'Go to work'
+        ],
+    ]);
+    // Same as:
+    // return view('welcome')->withTasks($tasks)->withFoo('foo');
+    // or
+    // return view('welcome', [
+    //     'tasks' => $tasks
+    // ]);
 });
 
 Route::get('/about', function () {
