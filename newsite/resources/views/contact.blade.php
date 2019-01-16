@@ -1,1 +1,5 @@
-<h2>Contact page</h2>
+@extends('layout')
+@section('title', 'Contact')
+@section('content')
+    <h1>Contact us</h1>
+@endsection
