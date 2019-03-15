@@ -13,3 +13,7 @@ Routes like those in `web.php` are handled through _closures_.
 _all_ `php artisan make:*` commands generate new files and classes.
 
 **collections** are like arrays.
+
+---
+
+**CSRF** stands for "Cross-Site Request Forgery".
