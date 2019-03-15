@@ -11,3 +11,5 @@ Routes like those in `web.php` are handled through _closures_.
 
 **migrations** are like version control for database.
 _all_ `php artisan make:*` commands generate new files and classes.
+
+**collections** are like arrays.
