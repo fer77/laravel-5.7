@@ -1,12 +1,14 @@
 To turn off blade templating scaping data use `!`.
- `{{!! <stuff-to-scape/> !!}}`
- Laravel uses magic methods to strip _Tasks_ from `->withTasks`:
+`{{!! <stuff-to-scape/> !!}}`
+Laravel uses magic methods to strip _Tasks_ from `->withTasks`:
+
 ```php
  return view('welcome')->withTasks($tasks)->withFoo('foo');
 ```
+
 ---
-Routes like those in `web.php` are handled through _closures._
----
+
+## Routes like those in `web.php` are handled through _closures._
 
 **migrations** are like version control for database.
 _all_ `php artisan make:*` commands generate new files and classes.
@@ -30,3 +32,6 @@ DELETE `/projects/1` (destroy).<br />
 
 `php artisan route:list` to list all routes in an app.
 `php artisan make:controller <controllerName> -r` the `-r` flag will make the necessary method steps (create, show, edit, delete...)
+
+---
+Because there is no way  of telling the browser about a `PATCH` request laravel provides `{{ method_field('PATCH') }}`, which creates an `<input type="hidden" name="_method" value="PATCH">` that laravel understands as an _edit_ to our database.
