@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
-</head>
-<body>
-    <h1>Projects</h1>
+@extends('layout')
+@section('content')
+<h1>Projects</h1>
+<ul>
     @foreach($projects as $project)
-    <li>{{ $project->title }}</li>
+    <li>
+        <a href="/projects/{{ $project->id }}">{{ $project->title }}</a>
+    </li>
     @endforeach
-</body>
-</html>
+</ul>
+<p>
+    <a href="/projects/create">Create new</a>
+</p>
+@endsection
