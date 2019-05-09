@@ -60,3 +60,9 @@ request method can be used in a couple of ways:
     dd(request(['title'])); // returns the key/value pair.
     dd(request()->all()); // returns everything that is in a project array.
 ```
+
+---
+_Client side browser validation_ comes in the form of `required` in HTML5, but it is not dependable.
+_Server side validation_ can be done using `request()->validate()` method. `request()->validate()` redirects the page with a jSON object that can be referenced.
+[Laravel validation rules](https://laravel.com/docs/5.8/validation#available-validation-rules)
+
