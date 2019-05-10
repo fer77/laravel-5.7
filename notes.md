@@ -66,3 +66,11 @@ _Client side browser validation_ comes in the form of `required` in HTML5, but i
 _Server side validation_ can be done using `request()->validate()` method. `request()->validate()` redirects the page with a jSON object that can be referenced.
 [Laravel validation rules](https://laravel.com/docs/5.8/validation#available-validation-rules)
 
+---
+
+**encapsulation** hide internal state and values inside a class.
+
+**models** encapsulate what it means to add a "task"
+
+**controllers** house the models, doesn't need to be aware of the DB, only need to know what it is we want the model to do.
+
