@@ -14,4 +14,9 @@ class Project extends Model
     {
         return $this->hasMany(Task::class);
     }
+    public function addTask($task)
+    {
+        // because Eloquent and Laravel know the relationship, based on the project instance. So there is no need to pass a "project_id"
+        $this->tasks()->create($task);
+    }
 }

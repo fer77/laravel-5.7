@@ -23,4 +23,19 @@
     @endforeach
 </div>
 @endif
+<form method="POST" action="/projects/{{ $project->id }}/tasks">
+    @csrf
+    <div>
+        <label for="description">New Task</label>
+        <div>
+            <input type="text" name="description" placeholder="New Task" required>
+        </div>
+    </div>
+    <div>
+        <div>
+            <button type="submit">Add Task</button>
+        </div>
+    </div>
+</form>
+@include ("errors")
 @endsection
