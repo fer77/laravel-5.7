@@ -74,3 +74,6 @@ _Server side validation_ can be done using `request()->validate()` method. `requ
 
 **controllers** house the models, doesn't need to be aware of the DB, only need to know what it is we want the model to do.
 
+---
+
+When in doubt, if we find ourselves abandoning _REST_ or using a lot of checks… it may be a sign to create a new controller and return to _restful_ methods.
