@@ -19,3 +19,12 @@ Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
 // Route::patch('/tasks/{task}', 'ProjectTasksController@update'); created a "CompletedTasksController" that handles tasks being completed.
 Route::post('/completed-tasks/{task}', 'CompletedTasksController@store');
 Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
+
+// Service container
+app()->bind('example', function() {
+    return new \App\Example;
+});
+Route::get('/', function() {
+    dd(app('example'), app('example')); // returns two seperate instance of the example class.
+    return view('welcome');
+});

@@ -77,3 +77,14 @@ _Server side validation_ can be done using `request()->validate()` method. `requ
 ---
 
 When in doubt, if we find ourselves abandoning _REST_ or using a lot of checks… it may be a sign to create a new controller and return to _restful_ methods.
+
+---
+
+**auto resolving**
+**service container** a block of key value pairs.
+
+```app()->bind('example')...``` binds things into a _service container_.
+```app()->bind...``` returns two seperate instance of the example class.
+```app()->singleton...``` returns a single instance of the example class.
+```app('example')...``` fetch out of the container.
+```app('App\Example')...``` Looks in the container in the absence of the key it then looks in the App path for a class clalled example (**auto resolving**)
