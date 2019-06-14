@@ -8,7 +8,7 @@ Laravel uses magic methods to strip _Tasks_ from `->withTasks`:
 
 ---
 
-## Routes like those in `web.php` are handled through _closures._
+Routes like those in `web.php` are handled through _closures._
 
 **migrations** are like version control for database.
 _all_ `php artisan make:*` commands generate new files and classes.
@@ -104,3 +104,32 @@ Flow:
 - Create/Add provider `php artisan make:provider…`
 - Register service provider in `config>app.php>providers`
 - _auto resolve_ or _typend_ in `web.php`.
+
+---
+
+
+
+`env()` is PHP's environment _super global_.  make changes in the `.env` file before reaching for `config` folder.  For things like _api keys_ or other sensitive info, do not store those as defaults in the `config` files, but rather put thos on the `.env` file directly (git ignored by default).
+
+`config()` is a method that allows for reading any of the kyes and values stored in the `config` folder.
+
+```php
+// config>laracasts.php
+<?php
+
+Return [
+
+​	'stripe' => [
+
+​		'private' => ''
+
+​	]
+
+]
+
+// web.php
+// config(laracasts.stripe.private);
+```
+
+
+
