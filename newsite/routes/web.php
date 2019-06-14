@@ -28,7 +28,7 @@ app()->bind('example', function () {
 });
 Route::get('/', function (Twitter $twitter, UserRepository $users) {
     //dd(app('example'), app('example')); // returns two seperate instance of the example class.
-    // dd($twitter);
-    dd($users);
+    dd($twitter);
+    // dd($users);
     return view('welcome');
 });
