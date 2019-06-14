@@ -1,4 +1,6 @@
 <?php
+use App\Services\Twitter;
+use App\Repositories\UserRepository;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +23,12 @@ Route::post('/completed-tasks/{task}', 'CompletedTasksController@store');
 Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
 
 // Service container
-app()->bind('example', function() {
+app()->bind('example', function () {
     return new \App\Example;
 });
-Route::get('/', function() {
-    dd(app('example'), app('example')); // returns two seperate instance of the example class.
+Route::get('/', function (Twitter $twitter, UserRepository $users) {
+    //dd(app('example'), app('example')); // returns two seperate instance of the example class.
+    // dd($twitter);
+    dd($users);
     return view('welcome');
 });
